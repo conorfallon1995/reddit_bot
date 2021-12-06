@@ -5,6 +5,7 @@ import os
 import requests
 import main
 
+
 def bot_login():
     print("Logging in...")
 
@@ -22,10 +23,10 @@ def run_bot(r, comments_replied_to):
     print("Obtaining 25 comments...")
 
     for comment in r.subreddit('test').comments(limit=25):
-        if "!joke" in comment.body and comment.id not in comments_replied_to and comment.author != r.user.me():
-            print("String with \"!joke\" found in comments " + comment.id)
+        if "!film" in comment.body and comment.id not in comments_replied_to and comment.author != r.user.me():
+            print("String with \"!film\" found in comments " + comment.id)
 
-            comment_reply = "You requested a joke about Chuck Norris! Here it is: \n \n"
+            comment_reply = "You have requested Mini-Movie-Recommender-Bot. Here's a bit of info: \n \n"
             print("Replied to comment " + comment.id)
 
             # Format strings
@@ -34,20 +35,24 @@ def run_bot(r, comments_replied_to):
             json_string = sql_string.replace(" ", "_").title()
             url_string = "https://en.wikipedia.org/api/rest_v1/page/summary/" + json_string
 
-            # TO DO: Need to pass the sql string into the main, OR import the necessary functionality
-            # from the main function; have a think about which will work best
-
             # This has been modified to return a wikipedia extract WILL CRASH IF TRY EXCEPT NOT HERE
+            # UNIT TEST GOES HERE
 
-
-            joke = ""
+            film = ""
 
             try:
-                joke = requests.get(url_string).json()['extract']
+                film = requests.get(url_string).json()['extract']
             except KeyError:
                 print('Blame the editors...')
 
-            comment_reply += ">" + joke
+            # Now add the bit from the main.py file
+
+            comment_reply += main.string_query(sql_string)
+
+            # Then the wiki bit
+
+            comment_reply += "\nHere is a bit of info about that movie, kindly provided by our friends at Wikipedia:\n"
+            comment_reply += ">" + film + "\n"
 
             comments_replied_to.append(comment.id)
 
@@ -61,6 +66,7 @@ def run_bot(r, comments_replied_to):
     # Sleep for ten seconds
     time.sleep(10)
 
+# Keeps a record of comments replied to so as to avoid spamming and getting exiled from Reddit...
 
 def get_saved_comments():
     if not os.path.isfile("comments_replied_to.txt"):
@@ -72,6 +78,7 @@ def get_saved_comments():
             comments_replied_to = list(filter(None, comments_replied_to))
 
     return comments_replied_to
+
 
 r = bot_login()
 comments_replied_to = get_saved_comments()

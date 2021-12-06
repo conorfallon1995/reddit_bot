@@ -1,7 +1,7 @@
 import sqlite3
 
 # Create a construction of database
-con = sqlite3.connect('movies.db')
+con = sqlite3.connect('../movies.db')
 
 #Text of nominees from Exasol DB
 
