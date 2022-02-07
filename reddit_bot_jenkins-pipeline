@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/conorfallon1995/reddit_bot.git']]])
+            }
+        }
+        stage('Build'){
+            steps {
+                git 'https://github.com/conorfallon1995/reddit_bot.git'
+                bat 'python reddit_bot.py'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'The project has been tested'
+            }
+        }
+    }
+
+}

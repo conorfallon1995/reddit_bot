@@ -3,9 +3,10 @@ import config
 import time
 import os
 import requests
-import main
+import querier
 
 
+#UNIT TEST HERE
 def bot_login():
     print("Logging in...")
 
@@ -16,6 +17,7 @@ def bot_login():
                     user_agent="CF test of basic reddit bot v0.1")
     print("Logged in!")
 
+    #print(r.user)
     return r
 
 
@@ -45,9 +47,9 @@ def run_bot(r, comments_replied_to):
             except KeyError:
                 print('Blame the editors...')
 
-            # Now add the bit from the main.py file
+            # Now add the bit from the querier.py file
 
-            comment_reply += main.string_query(sql_string)
+            comment_reply += querier.string_query(sql_string)
 
             # Then the wiki bit
 
@@ -80,9 +82,9 @@ def get_saved_comments():
     return comments_replied_to
 
 
-r = bot_login()
+
 comments_replied_to = get_saved_comments()
 print(comments_replied_to)
 
 while True:
-    run_bot(r, comments_replied_to)
+    run_bot(bot_login(), comments_replied_to)

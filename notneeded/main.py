@@ -3,7 +3,7 @@ import sqlite3
 # import reddit_bot as bot
 
 # Create a construction of database
-con = sqlite3.connect('movies.db')
+con = sqlite3.connect('../../movies.db')
 
 # Create a cursor object to perform SQL commands
 
