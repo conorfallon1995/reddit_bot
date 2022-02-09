@@ -25,15 +25,17 @@ Examples of the bots outputs (successes and failures) can be seen at this test s
 ## Checklist
 
 1. This was my first experience with a software engineering module, and hence in using git. I found git and github to be a useful tool. I set up my own repository, made use of git clone to get said repository onto my computer. I initally used commands like commit or push, but found it easier to just used the built in integration which PyCharm has for git to manage my project. I also learned about different branches and things like version control, although I admittedly just used a single master branch for this relatively simple project. I also learned how to integrate my github repository to Jenkins.
-    * ABC
 2. The three UML diagrams can be found in the 'UML_diagrams' directory. A flow chart, a deployment diagram, and a class diagram are contained therein, respectively.
 3. The diagram of my Domain Driven Design of the imagined future business 'MovieRecommenderGmbH' can be found in the file 'DDD.png'.
 4. Da
-5. ad
-6. I used PyBuilder for Build Management, as it integrates nicely with my preferred IDE of PyCharm. According to PyBuilder themselves, they have borrowed many of their conventions from Apache Maven. However, I found it tricky to integrate with my project, because I had completely the code part first then tried to tack on the build system after the fact. Successful console deployment of the tool can be viewed in the file 'BuildSumary.png"
+5. Please see CCC_CheatSheet.md
+6. I used PyBuilder for Build Management, as it integrates nicely with my preferred IDE of PyCharm. According to PyBuilder themselves, they have borrowed many of their conventions from Apache Maven. However, I found it tricky to integrate with my project, because I had completed the code part first then tried to tack on the build system after the fact. Successful console deployment of the tool can be viewed in the file 'BuildSumary.png"
    * However, I did use it to produce some documentation and run a basic unit test to show that I had used this as an opportunity to learn a build tool, creating some basic documentation and tests for a helloworld.py program (exists in venv/src/main/python). The output documentation of test unit coverage can be viewed in the file /venv/target/reports/helloworld_coverage.xml. A range of other documentation was produced which can be viewed, if desired, by going into the venv/target folder. The file TargetDirectoryTree.png also shows all of the directories that PyBuilder creates for when one wants to correctly “build” a python project.
-   
-7. ad
+7. I deployed unit-tests with the Python "unittest" Unit testing framework. These tests are available in the following files:
+   * test_reddit_bot.py: Here, my first test simply checked that the project itself was well set up. i.e. does the config.py actually lead to the correct login credentials being passed into reddit’s API.
+   * test_querier.py: Here, the second two tests check that a secure SQLite connection has been made with the movies.db database, by checking that Cursor objects and Connection objects had successfully been established.
+   * It was also mentioned that we should integrate unit-tests in our build management tool. Therefore, I also tried to learn how to make a Unit-Test with my chosen build management system, PyBuilder. Here I ran a rudimentary test under this system in venv/src/unittest/python/helloworld_tests.py
+
 8. I got Jenkins running using the relevant password running on localhost 80.80. (I used the brew install method outlined on the jenkins website). 
 Created the file ‘reddit-bot-pipeline’ on my local host which is available on this repository. Made use of ‘pipeline Syntax’. Used this to connect the pipeline to my git repository. This produced a pipeline script which allowed me to integrate the two. Pipeline has three stages: Checkout, build, and a test stage. The image "jenkins_localhost_setup.png" has also been included to demonstrate that I did indeed have Jenkins installed and working on my computer.
 
@@ -41,7 +43,7 @@ Created the file ‘reddit-bot-pipeline’ on my local host which is available o
     * Cmd z and Cmd Shift z for undo and redo were a great help to me...
     * As were Cmd c and Cmd v for copy and paste related reasons
     * I also forced myself to learn the git commands for Push and Commit which were Cmd K and Cmd Shift K respectively.
-10. My DSL demo is available in the directory "DSL" which contains the following files: ‘Vessel.java’ and ‘runVesselDSL.java’, which define a vessel in my own boat-related domain specific language, and then implement a given vessel. In Vessel.java, a vessel is defined as a class which possesses a name, a year of creation, and a make, as we would expect of a vessel in real life. By running ‘java runVesselDSL’, the following is outputted:
+10. My DSL demo is available in the directory "DSL" which contains the following files: ‘Vessel.java’ and ‘runVesselDSL.java’, which define a vessel in my own boat-related domain specific language, and then implement a given vessel. In Vessel.java, a vessel is defined as a class which possesses a name, a year of creation, a length, and a make, as we would expect of a vessel in real life. By running ‘java runVesselDSL’, the following is outputted:
     * Name of vessel is The Flying Sheep.
     * The vessel has a length of 182.0 metres.
     * Its make is Harland & Wolff and its year of manufacture was 1642.
@@ -61,6 +63,7 @@ Project is created with:
 * PRAW: The Python Reddit API Wrapper
 * JSON
 * SQLite version: 3.36.0
+* Java version 11.0.1
 	
 ## Setup
 To run this project, install it locally using npm:

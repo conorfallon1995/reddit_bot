@@ -6,7 +6,7 @@ import sqlite3
 con = sqlite3.connect('movies.db')
 
 # Create a cursor object to perform SQL commands
-
+print(type(con))
 cur = con.cursor()
 
 

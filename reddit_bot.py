@@ -5,6 +5,7 @@ import os
 import requests
 import querier
 
+sleepTime = 10
 
 #UNIT TEST HERE
 def bot_login():
@@ -17,7 +18,7 @@ def bot_login():
                     user_agent="CF test of basic reddit bot v0.1")
     print("Logged in!")
 
-    #print(r.user)
+    print(type(r.user))
     return r
 
 
@@ -66,7 +67,7 @@ def run_bot(r, comments_replied_to):
     print(comments_replied_to)
     print("Sleeping for ten seconds...")
     # Sleep for ten seconds
-    time.sleep(10)
+    time.sleep(sleepTime)
 
 # Keeps a record of comments replied to so as to avoid spamming and getting exiled from Reddit...
 
