@@ -18,7 +18,7 @@ will provide the user with a range of information and movie recommendations abou
 
 Examples of the bots outputs (both successes and failures) can be seen at this test site I have been using, if you do not have time to run it yourself:
 
-The main code for the bot can be find in [reddit_bot.py](https://github.com/conorfallon1995/reddit_bot/blob/master/reddit_bot.py) and [querier.py](https://github.com/conorfallon1995/reddit_bot/blob/master/querier.py).
+The main code for the bot can be found in [reddit_bot.py](https://github.com/conorfallon1995/reddit_bot/blob/master/reddit_bot.py) and [querier.py](https://github.com/conorfallon1995/reddit_bot/blob/master/querier.py).
 
 &nbsp;&nbsp;&nbsp;&nbsp; https://old.reddit.com/r/test/comments/ql1xai/testst/?sort=new 
 
