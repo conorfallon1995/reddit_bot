@@ -18,13 +18,14 @@ will provide the user with a range of information and movie recommendations abou
 
 Examples of the bots outputs (both successes and failures) can be seen at this test site I have been using, if you do not have time to run it yourself:
 
+The main code for the bot can be find in reddit_bot.py and querier.py.
 
 &nbsp;&nbsp;&nbsp;&nbsp; https://old.reddit.com/r/test/comments/ql1xai/testst/?sort=new 
 
 ## Checklist
 
 1. This was my first experience with a software engineering module, and hence in using git. I found git and github to be a useful tool. I set up my own repository, made use of 'git clone' to get said repository onto my computer. I initially used commands like commit or push, but found it easier to just used the built-in integration which PyCharm has for git to manage my project. I also learned about branching and things like version control, although I admittedly just used a single master branch for this relatively simple project. I also learned how to integrate my github repository to Jenkins.
-2. The three UML diagrams can be found in the 'UML_diagrams' directory. A flow chart, a deployment diagram, and a class diagram are contained therein, respectively.
+2. The three UML diagrams can be found in the ['UML_diagrams'](https://github.com/conorfallon1995/reddit_bot/tree/master/UML_diagrams) directory. A flow chart, a deployment diagram, and a class diagram are contained therein, respectively.
 3. The diagram of my Domain Driven Design of the imagined future business 'MovieRecommenderGmbH' can be found in the file 'DDD.png'.
 4. I tried to install Sonarqube on my Mac, but failed after trying a couple of times. Then I searched for an alternative to Sonarqube and found MetricsReloaded, which is a plugin for my preferred IDE, PyCharm. Admittedly it is not the most impressive tool in the world. Still, I got two metrics out of it.
    * Screenshots of the metrics produced by this plugin can be seen in ProjectMetrics.png and FileTypeMetrics.png . I will also compute two more metrics by-hand given the limited features of the plugin:

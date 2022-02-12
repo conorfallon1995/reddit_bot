@@ -7,7 +7,7 @@ import querier
 
 sleepTime = 10
 
-#UNIT TEST HERE
+
 def bot_login():
     print("Logging in...")
 
@@ -38,8 +38,7 @@ def run_bot(r, comments_replied_to):
             json_string = sql_string.replace(" ", "_").title()
             url_string = "https://en.wikipedia.org/api/rest_v1/page/summary/" + json_string
 
-            # This has been modified to return a wikipedia extract WILL CRASH IF TRY EXCEPT NOT HERE
-            # UNIT TEST GOES HERE
+            # This has been modified to return a wikipedia extract
 
             film = ""
 
@@ -69,6 +68,7 @@ def run_bot(r, comments_replied_to):
     # Sleep for ten seconds
     time.sleep(sleepTime)
 
+
 # Keeps a record of comments replied to so as to avoid spamming and getting exiled from Reddit...
 
 def get_saved_comments():
@@ -81,7 +81,6 @@ def get_saved_comments():
             comments_replied_to = list(filter(None, comments_replied_to))
 
     return comments_replied_to
-
 
 
 comments_replied_to = get_saved_comments()

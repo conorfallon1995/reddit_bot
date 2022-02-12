@@ -1,12 +1,9 @@
 import sqlite3
 
-# import reddit_bot as bot
-
 # Create a construction of database
 con = sqlite3.connect('movies.db')
 
 # Create a cursor object to perform SQL commands
-print(type(con))
 cur = con.cursor()
 
 
@@ -40,5 +37,5 @@ def string_query(_film: str) -> str:
     return_string = 'This movie was directed by ' + str(
         _director_name) + '. Here is a selection of their top 5 movies as per their IMDB ranking. Maybe you\'ll enjoy these!  \n\n' + ''.join(
         _string_list)
-    # this can probably be turned into a unit test of some description, to account for when there's no IMDB result found
+
     return return_string
