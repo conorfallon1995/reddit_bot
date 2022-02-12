@@ -1,0 +1,4 @@
+Checking /Users/conor/PycharmProjects/reddit_bot/venv/target/dist/helloworld-1.0.dev0/dist/helloworld-1.0.dev0-py3-none-any.whl: PASSED, with warnings
+  warning: `long_description_content_type` missing. defaulting to `text/x-rst`.
+Checking /Users/conor/PycharmProjects/reddit_bot/venv/target/dist/helloworld-1.0.dev0/dist/helloworld-1.0.dev0.tar.gz: PASSED, with warnings
+  warning: `long_description_content_type` missing. defaulting to `text/x-rst`.

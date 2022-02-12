@@ -1,0 +1,6 @@
+Collecting mockito
+  Downloading mockito-1.3.0-py3-none-any.whl (29 kB)
+Installing collected packages: mockito
+Successfully installed mockito-1.3.0
+WARNING: You are using pip version 21.3.1; however, version 22.0.3 is available.
+You should consider upgrading via the '/Users/conor/PycharmProjects/reddit_bot/venv/target/venv/build/cpython-3.9.0.final.0/bin/python -m pip install --upgrade pip' command.
