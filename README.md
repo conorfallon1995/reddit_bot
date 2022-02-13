@@ -10,13 +10,13 @@
 ## General info
 This project is a simple reddit bot that, upon using a specific keyword, will provide the user with information on a given movie retrieved from Wikipedia and recommend them further movies based on the most highly regarded work done by the director in question, based on the director's IMDB rankings.
 
-To trigger this bot, simply comment the string "!film" followed by the name of the film you wish to know more about. For example, commenting:
+To trigger this bot, simply comment the string "!film" anywhere on the r/test subreddit, followed by the name of the film you wish to know more about. For example, commenting:
    
 &nbsp;&nbsp;&nbsp;&nbsp; !film goodfellas
 
 will provide the user with a range of information and movie recommendations about Martin Scorsese's 1990 film _Goodfellas_.
 
-Examples of the bots outputs (both successes and failures) can be seen at this test site I have been using, if you do not have time to run it yourself:
+Examples of the bots outputs (both successes and failures) can be seen at this test page I have been using, if you do not have time to run it yourself:
 
 The main code for the bot can be found in [reddit_bot.py](https://github.com/conorfallon1995/reddit_bot/blob/master/reddit_bot.py) and [querier.py](https://github.com/conorfallon1995/reddit_bot/blob/master/querier.py).
 

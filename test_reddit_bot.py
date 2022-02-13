@@ -17,5 +17,3 @@ class Test(unittest.TestCase):
 
 
 
-    #def test_run_bot(self):
-        #self.assertNotEqual(self.film, "")
